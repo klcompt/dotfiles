@@ -13,7 +13,7 @@ source $HOME/.vim/bundles.vim
 "Enable syntax highlightning and some nice filetype associations
 syntax enable
 filetype plugin indent on
-colorscheme molokai
+colorscheme vividchalk
 
 " Set console highlights to be readable with black background
 set bg=dark
@@ -75,6 +75,12 @@ set hidden
 " e.g. to backspace past start of edit
 set backspace=indent,eol,start
 
+" Make the keyboard and mouse act more like Windows
+set selection=inclusive
+set selectmode=mouse,key
+set mousemodel=popup
+set keymodel=startsel,stopsel
+
 set whichwrap+=<,>,[,]
 
 set listchars=tab:>-,trail:·
@@ -102,3 +108,5 @@ source $HOME/.vim/key_maps.vim
 
 " Load commands
 source $HOME/.vim/commands.vim
+
+set cursorline

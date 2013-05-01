@@ -1,10 +1,3 @@
-[user]
-    name = Charlie Sanders
-    email = sanderscharlie@gmail.com
-
-[github]
-    user = sandersch
-
 [color]
     ui = auto
     interactive = auto
@@ -61,4 +54,12 @@
     wipe = !git reset --hard; git clean -fd
 
 [include]
-    path = .gitconfig.local
+  path = .gitconfig.local
+[git-pair]
+  authors = Kevin Compton <kevin.compton@asynchrony.com>
+  authors = Daniel Errante <daniel.errante@asynchrony.com>
+  authors = Victor Prechtel <victor.prechtel@asynchrony.com>
+  authors = Mike Nolan <mike.nolan@asynchrony.com>
+  authors = Kenny Ortmann <kenny.ortmann@asynchrony.com>
+[user]
+  email = ionic-mobile-dev@asynchrony.com
