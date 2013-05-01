@@ -99,7 +99,7 @@ function get_qa_token()
 function get_staging_token()
 {
   . resty
-  resty http://staging-ionicmobile.asolutions.com
+  resty http://staging-ionicmobile.asynchrony.com
   KEY=9118d6a5f4f3818acc287ec117ee8d767a83b39ce1332efe468ce004bd26e863
   echo "username:"
   read username
@@ -107,7 +107,7 @@ function get_staging_token()
   read -s password
   TOKEN=`resty PUT /access_token.json -d "access_token[username]=$username&access_token[password]=$password&access_token[app_api_key]=$KEY" | 
             jsawk 'return this.access_token.id'`
-  resty http://staging-ionicmobile.asolutions.com -H "IM-AccessToken: $TOKEN"
+  resty http://staging-ionicmobile.asynchrony.com -H "IM-AccessToken: $TOKEN"
 }
 
 alias stop_elastic_search="launchctl unload -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
