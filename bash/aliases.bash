@@ -28,8 +28,8 @@ alias ll="$LS_CMD -al"
 alias la="$LS_CMD -A"
 alias l="$LS_CMD -lahrtc"
 alias gk="gitk 2> /dev/null"
-alias ts="cd workspace/townhall_server"
-alias is="cd workspace/ionic_api_server"
+alias ts="cd ~/workspace/townhall_server"
+alias is="cd ~/workspace/ionic_api_server"
 
 # Syntax highlighting for less (-R for RAW ^ colors)
 alias less='less -R'
