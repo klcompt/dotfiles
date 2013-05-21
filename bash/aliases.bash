@@ -80,12 +80,28 @@ function get_token_local()
   KEY=2237c2051d9355c0e3981804b62b4e61455ede1564df948e1a556b7690b5a690
   echo "username:"
   read username
-  TOKEN=`resty PUT /access_token.json -d "access_token[username]=$username&access_token[password]=pass1234&access_token[app_api_key]=$KEY" | 
+  echo "password:"
+  read -s password
+  TOKEN=`resty PUT /access_token.json -d "access_token[username]=$username&access_token[password]=$password&access_token[app_api_key]=$KEY" | 
             jsawk 'return this.access_token.id'`
   resty http://localhost:3000 -H "IM-AccessToken: $TOKEN"
   echo "Logged in as $username"
 }
 
+function get_mobile_token()
+{
+  . resty
+  resty http://mobiledev-ionicmobile.asolutions.com
+  KEY=2237c2051d9355c0e3981804b62b4e61455ede1564df948e1a556b7690b5a690
+  echo "username:"
+  read username
+  echo "password:"
+  read -s password
+  TOKEN=`resty PUT /access_token.json -d "access_token[username]=$username&access_token[password]=$password&access_token[app_api_key]=$KEY" | 
+            jsawk 'return this.access_token.id'`
+  resty http://mobiledev-ionicmobile.asolutions.com -H "IM-AccessToken: $TOKEN"
+  echo "Logged in as $username"
+}
 function get_qa_token()
 {
   . resty
