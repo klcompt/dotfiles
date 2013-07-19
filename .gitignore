@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *~
 *.DS_Store
 *.swp
@@ -7,3 +8,13 @@ tags
 mplayer.symlink/mplayer.symlink
 vim.symlink/vim.symlink
 vim.symlink/bundle/
+=======
+vim/backup/
+vim.symlink/backup/
+vim.symlink/doc/
+vim.symlink/indent/
+vim.symlink/nerdtree_plugin/
+vim.symlink/plugin/
+vim.symlink/syntax/
+.netrwhist
+>>>>>>> asynch/master
