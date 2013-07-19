@@ -45,12 +45,7 @@ task :symlinks do
       `mv "$HOME/.#{file}" "$HOME/.#{file}.backup"` if backup || backup_all
     end
 
-<<<<<<< HEAD
     `ln -s "$PWD/#{link_source}" "#{target}"` if !skip_all
-=======
-    # -T to treat target as normal file (ie never a directory)
-    `ln -s "$PWD/#{link_source}" "#{target}"`
->>>>>>> asynch/master
   end
 end
 
@@ -65,17 +60,9 @@ task :uninstall do
     if File.symlink?(target)
       FileUtils.rm(target)
     end
-<<<<<<< HEAD
-
     # Replace any backups made during installation
     if File.exists?("#{ENV["HOME"]}/.#{file}.backup")
       `mv "$HOME/.#{file}.backup" "$HOME/.#{file}"`
-=======
-    
-    # Replace any backups made during installation
-    if File.exists?("#{ENV["HOME"]}/.#{file}.backup")
-      `mv "$HOME/.#{file}.backup" "$HOME/.#{file}"` 
->>>>>>> asynch/master
     end
   end
 end
@@ -84,10 +71,6 @@ namespace "vundle" do
   desc "Update vim plugins with vundle"
   task :install do
     puts 'Updating vim bundles with vundle. This may take a few minutes...'
-<<<<<<< HEAD
-    `vim -u vim.symlink/bundles.vim +BundleInstall +qall`
-=======
     `vim -u vim.symlink/bundle.vim +BundleInstall +qall`
->>>>>>> asynch/master
   end
 end

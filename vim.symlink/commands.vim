@@ -14,8 +14,6 @@ endif
 "
 command! Bd enew<Bar>bd #
 
-<<<<<<< HEAD
-=======
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
@@ -73,7 +71,6 @@ if has("autocmd")
      \| exe "normal g'\"" | endif
 endif
 
->>>>>>> asynch/master
 cabbrev Q quit
 cabbrev W write
 cabbrev Wq wq
