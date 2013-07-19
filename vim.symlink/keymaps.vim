@@ -143,6 +143,9 @@ let g:SuperTabDefaultCompletionType = "context"
 
 let g:user_zen_expandabbr_key = '<c-z>'
 
+let g:ctrlp_map = '<c-t>'
+let g:ctrlp_cmd = 'CtrlP'
+
 " Mapping for toggling between block wrappers
 let g:blockle_mapping = '<Leader>bl'
 
