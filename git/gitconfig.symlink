@@ -62,4 +62,6 @@
   authors = Mike Nolan <mike.nolan@asynchrony.com>
   authors = Kenny Ortmann <kenny.ortmann@asynchrony.com>
 [user]
-  email = ionic-mobile-dev@asynchrony.com
+	email = travis.meisenheimer@asynchrony.com
+	name = Travis Meisenheimer
+	initials = tm

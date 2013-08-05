@@ -25,7 +25,7 @@ PATH=$PATH:/usr/local/share/npm/bin # Add node package manager to PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Anything inside here only gets executed in interactive shells
-if [[ -n "$PS1" ]]; then 
+if [[ -n "$PS1" ]]; then
     # don't put duplicate lines in the history. See bash(1) for more options
     # ... or force ignoredups and ignorespace
     HISTCONTROL=ignoredups:ignorespace
@@ -64,4 +64,10 @@ if [[ -n "$PS1" ]]; then
         keychain ~/.ssh/id_rsa ~/.ssh/id_dsa
         . ~/.keychain/$HOSTNAME-sh
     fi
+
+
+    #bind arrow keys to history completion search!
+    bind '"\e[A": history-search-backward'
+    bind '"\e[B": history-search-forward'
+
 fi # [[ -n "$PS1" ]]
