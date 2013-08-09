@@ -62,6 +62,4 @@
   authors = Mike Nolan <mike.nolan@asynchrony.com>
   authors = Kenny Ortmann <kenny.ortmann@asynchrony.com>
 [user]
-	email = travis.meisenheimer@asynchrony.com
-	name = Travis Meisenheimer
-	initials = tm
+	email = asynchrony@asynchrony.com
