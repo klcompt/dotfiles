@@ -35,6 +35,7 @@
     oneline = log --oneline
     patch = log -p --no-walk # generate patch file from a commit.
     pick = cherry-pick
+    pov = pull -v origin
     prune = remote prune
     prune-all = !git remote | xargs -n 1 git remote prune
     qstat = status --untracked-files=no
@@ -42,6 +43,7 @@
     st = status
     staged = diff --staged
     stat = status
+    sub = submodule update --init --recursive
     svn-pull = !git svn fetch && git svn rebase
     svn-push = !git svn dcommit
     uncommit = reset --soft HEAD^
@@ -54,12 +56,4 @@
     wipe = !git reset --hard; git clean -fd
 
 [include]
-  path = .gitconfig.local
-[git-pair]
-  authors = Kevin Compton <kevin.compton@asynchrony.com>
-  authors = Daniel Errante <daniel.errante@asynchrony.com>
-  authors = Victor Prechtel <victor.prechtel@asynchrony.com>
-  authors = Mike Nolan <mike.nolan@asynchrony.com>
-  authors = Kenny Ortmann <kenny.ortmann@asynchrony.com>
-[user]
-	email = asynchrony@asynchrony.com
+    path = .gitconfig.local
