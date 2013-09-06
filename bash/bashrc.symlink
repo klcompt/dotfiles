@@ -71,3 +71,5 @@ if [[ -n "$PS1" ]]; then
     bind '"\e[B": history-search-forward'
 
 fi # [[ -n "$PS1" ]]
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
