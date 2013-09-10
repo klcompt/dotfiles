@@ -12,7 +12,7 @@ export PATH="${HOME}/dotfiles/bin:${HOME}/bin:${PATH}"
 export PATH=/usr/local/bin:$PATH
 
 # Add android sdk tools to path if they exist
-ANDROID_SDK="${HOME}/android-sdk/"
+ANDROID_SDK="/Applications/ADT/sdk/"
 [ -d "${ANDROID_SDK}/tools" ] && export PATH=${PATH}:${ANDROID_SDK}/tools
 [ -d "${ANDROID_SDK}/platform-tools" ] && export PATH=${PATH}:${ANDROID_SDK}/platform-tools
 unset ANDROID_SDK
