@@ -67,7 +67,7 @@ function get_token()
   . resty
   resty http://localhost:3000
   KEY=2237c2051d9355c0e3981804b62b4e61455ede1564df948e1a556b7690b5a690
-  TOKEN=`resty PUT /access_token.json -d "access_token[username]=joe&access_token[password]=pass1234&access_token[app_api_key]=$KEY" | 
+  TOKEN=`resty PUT /access_token.json -d "access_token[username]=joe&access_token[password]=pass1234&access_token[app_api_key]=$KEY" |
             jsawk 'return this.access_token.id'`
   resty http://localhost:3000 -H "IM-AccessToken: $TOKEN"
   echo "Logged in as $USER"
@@ -82,7 +82,7 @@ function get_token_local()
   read username
   echo "password:"
   read -s password
-  TOKEN=`resty PUT /access_token.json -d "access_token[username]=$username&access_token[password]=$password&access_token[app_api_key]=$KEY" | 
+  TOKEN=`resty PUT /access_token.json -d "access_token[username]=$username&access_token[password]=$password&access_token[app_api_key]=$KEY" |
             jsawk 'return this.access_token.id'`
   resty http://localhost:3000 -H "IM-AccessToken: $TOKEN"
   echo "Logged in as $username"
@@ -97,17 +97,32 @@ function get_mobile_token()
   read username
   echo "password:"
   read -s password
-  TOKEN=`resty PUT /access_token.json -d "access_token[username]=$username&access_token[password]=$password&access_token[app_api_key]=$KEY" | 
+  TOKEN=`resty PUT /access_token.json -d "access_token[username]=$username&access_token[password]=$password&access_token[app_api_key]=$KEY" |
             jsawk 'return this.access_token.id'`
   resty http://mobiledev-ionicmobile.asolutions.com -H "IM-AccessToken: $TOKEN"
   echo "Logged in as $username"
 }
+
+function get_demo_token()
+{
+  . resty
+  resty http://demo-ionicmobile.asolutions.com
+  echo "username:"
+  read username
+  echo "password:"
+  read -s password
+  TOKEN=`resty PUT /access_token.json -d "access_token[username]=$username&access_token[password]=$password" |
+            jsawk 'return this.access_token.id'`
+  resty http://demo-ionicmobile.asolutions.com -H "IM-AccessToken: $TOKEN"
+  echo "Logged in as $username"
+}
+
 function get_qa_token()
 {
   . resty
   resty http://qa-ionicmobile.asolutions.com
   KEY=3ac6607abbdb98e1063f4f63a4369278b9ba0de47284a40f097de13faa22aa5c
-  TOKEN=`resty PUT /access_token.json -d "access_token[username]=joe&access_token[password]=pass1234&access_token[app_api_key]=$KEY" | 
+  TOKEN=`resty PUT /access_token.json -d "access_token[username]=joe&access_token[password]=pass1234&access_token[app_api_key]=$KEY" |
             jsawk 'return this.access_token.id'`
   resty http://qa-ionicmobile.asolutions.com -H "IM-AccessToken: $TOKEN"
 }
@@ -121,7 +136,7 @@ function get_staging_token()
   read username
   echo "password:"
   read -s password
-  TOKEN=`resty PUT /access_token.json -d "access_token[username]=$username&access_token[password]=$password&access_token[app_api_key]=$KEY" | 
+  TOKEN=`resty PUT /access_token.json -d "access_token[username]=$username&access_token[password]=$password&access_token[app_api_key]=$KEY" |
             jsawk 'return this.access_token.id'`
   resty https://staging-ionicmobile.asynchrony.com -H "IM-AccessToken: $TOKEN"
 }
@@ -136,7 +151,7 @@ function get_prod_token()
   read username
   echo "password:"
   read -s password
-  TOKEN=`resty PUT /access_token.json -d "access_token[username]=$username&access_token[password]=$password&access_token[app_api_key]=$KEY" | 
+  TOKEN=`resty PUT /access_token.json -d "access_token[username]=$username&access_token[password]=$password&access_token[app_api_key]=$KEY" |
             jsawk 'return this.access_token.id'`
   resty https://ionicmobile.asolutions.com -H "IM-AccessToken: $TOKEN"
 }
