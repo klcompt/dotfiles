@@ -155,6 +155,15 @@ function get_prod_token()
             jsawk 'return this.access_token.id'`
   resty https://ionicmobile.asolutions.com -H "IM-AccessToken: $TOKEN"
 }
+
+function commit(){
+  echo "Pair initials:"
+  read INITIALS
+  git pair $INITIALS
+  echo "Commit Message:"
+  read MESSAGE
+  git ci -m "$MESSAGE"
+}
 alias stop_elastic_search="launchctl unload -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
 alias start_elastic_search="launchctl load -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
 
