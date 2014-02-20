@@ -103,6 +103,9 @@ set guioptions-=T
 
 " Default gui color scheme
 color gummybears
+" The following line is for gummybears ONLY to set the non-selected statusline
+" text to something readable.
+hi  StatusLineNC guifg=#9cffd3 guibg=#202020 gui=bold      ctermfg=0     ctermbg=234  cterm=BOLD
 
 " ConqueTerm wrapper
 function StartTerm()
