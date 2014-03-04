@@ -10,6 +10,9 @@
     whitespace = strip
     whitespace = nowarn
 
+[credential]
+    helper = cache
+
 [alias]
     addall = !git add . && git add -u && git st
     amend = commit --amend --reset-author --reuse-message=HEAD
