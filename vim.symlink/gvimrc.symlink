@@ -107,6 +107,15 @@ color gummybears
 " text to something readable.
 hi  StatusLineNC guifg=#9cffd3 guibg=#202020 gui=bold      ctermfg=0     ctermbg=234  cterm=BOLD
 
+"color codeschool
+"set guifont=Monaco:h12
+"set guioptions-=T " Removes top toolbar
+"set guioptions-=r " Removes right hand scroll bar
+"set go-=L " Removes left hand scroll bar
+"autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> correctly
+":set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
+
+
 " ConqueTerm wrapper
 function StartTerm()
   execute 'ConqueTerm ' . $SHELL . ' --login'
