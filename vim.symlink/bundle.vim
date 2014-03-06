@@ -41,6 +41,10 @@ Bundle 'tsaleh/vim-matchit'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'Raimondi/delimitMate'
 Bundle 'jgdavey/vim-blockle'
+Bundle 'tpope/vim-rvm'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'wesgibbs/vim-irblack'
+Bundle 'elzr/vim-json'
 
 Bundle 'kien/ctrlp.vim'
 
