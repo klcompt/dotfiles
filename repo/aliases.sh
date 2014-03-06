@@ -16,6 +16,19 @@ function repo_checkout_local() {
   done
 }
 
+function repo_push_local_branch_to_asynchrony() {
+  if [[ ! -d .repo ]]; then
+    echo "ERROR: $PWD is not managed by repo"
+    return 1
+  fi
+
+  for dir in */; do
+    cd $dir
+    git push -u asynchrony HEAD
+    cd -
+  done
+}
+
 function check_repo_installed() {
   if [[ -z `which repo > /dev/null 2>&1` ]]; then
     # repo is not installed
