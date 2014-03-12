@@ -1,19 +1,10 @@
 # enable color support of ls if it seems available
 export GREP_COLOR=33
 USE_COLOR_CMDS=""
-if [ -x /usr/bin/dircolors ]; then
-  USE_COLOR_CMDS="true"
-  LS_CMD='ls --classify --color=auto'
 
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-  alias dir='dir --color=auto'
-  alias vdir='vdir --color=auto'
-elif $(gls &> /dev/null); then
-  USE_COLOR_CMDS="true"
-  LS_CMD='gls --classify --color=auto'
-else
-  LS_CMD='ls'
-fi
+# for a mac
+export CLICOLOR=1
+export LSCOLORS=gxfxcxdxbxegedabagacad
 
 if [ ! -z "$USE_COLOR_CMDS" ]; then
   # Highlight search term in grep
@@ -23,6 +14,7 @@ if [ ! -z "$USE_COLOR_CMDS" ]; then
 fi
 unset USE_COLOR_CMDS
 
+export LS_CMD="ls"
 alias ls="$LS_CMD"
 alias ll="$LS_CMD -al"
 alias la="$LS_CMD -A"

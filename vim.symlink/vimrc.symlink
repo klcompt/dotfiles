@@ -81,7 +81,7 @@ let g:CommandTMaxHeight=20
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
+let g:syntastic_quiet_messages={'level':'warnings'}
 
 " Directories for swp files
 set backupdir=~/.vim/backup
