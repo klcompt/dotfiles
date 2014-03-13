@@ -18,6 +18,7 @@
     amend = commit --amend --reset-author --reuse-message=HEAD
     aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
     br = branch
+    bra = branch -a
     ci = commit -v
     clear = !git add . && git stash && git stash drop
     co = checkout
@@ -57,6 +58,7 @@
     which-branches-contain = branch -a --contains
     which-tags-contain = name-rev --name-only
     wipe = !git reset --hard; git clean -fd
+    rs = reset --hard
 
 [include]
     path = .gitconfig.local
