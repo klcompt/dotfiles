@@ -59,6 +59,11 @@ if [[ -n "$PS1" ]]; then
         . /etc/bash_completion
     fi
 
+    # Alias script to launch development environment for IM Server.
+    if [ -f ~/secure_share_workspace/common_utils/applescripts/launch_alias.bash ]; then
+        . ~/secure_share_workspace/common_utils/applescripts/launch_alias.bash
+    fi
+
     # Set up keychain
     if which keychain 1>&2 >/dev/null; then
         keychain ~/.ssh/id_rsa ~/.ssh/id_dsa
