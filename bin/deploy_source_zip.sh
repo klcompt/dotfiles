@@ -2,7 +2,8 @@
 
 if [ "$#" -ne 2 ]; then
     echo "This script shallow clones all repos in your directory,"
-    echo "and zips them up for a deployment."
+    echo "and zips them up for a deployment. It uses a temp directory"
+    echo "and will not affect your secure_share_workspace repos."
     echo
     echo "Usage: please run from your secure_share_workspace directory!"
     echo "Usage: deploy_source {git branch to deploy} {output zip file}"
@@ -14,6 +15,7 @@ TEMP_DIR=temp_$(date +%F%T)
 
 echo
 echo This command will create a zip file of latest shallowly cloned source across all repos.
+echo It uses a temp directory for cloning, and will not affect your secure_share_workspace repos.
 echo This may take some time...
 read -p "Press [Enter] key to continue"
 echo
