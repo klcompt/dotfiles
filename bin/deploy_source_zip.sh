@@ -33,6 +33,7 @@ cd ${TEMP_DIR}
 for DIR in $DIRS
 do
   git clone https://git.asynchrony.com/proj-1016/${DIR} --depth 1 -b ${DEPLOY_BRANCH}
+  rm -f ${DIR}/.git/shallow
 done
 
 echo
