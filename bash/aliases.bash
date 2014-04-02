@@ -162,3 +162,7 @@ alias start_elastic_search="launchctl load -wF ~/Library/LaunchAgents/homebrew.m
 for FILE in ~/dotfiles/*/aliases.sh; do
   source $FILE
 done
+
+alias start_nginx="sudo launchctl start homebrew.mxcl.fips-enabled-nginx"
+alias stop_nginx="sudo launchctl stop homebrew.mxcl.fips-enabled-nginx"
+alias restart_nginx="stop_nginx && start_nginx"
