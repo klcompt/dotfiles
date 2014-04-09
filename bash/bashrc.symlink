@@ -5,6 +5,9 @@ umask 022
 export EDITOR=vim
 export PAGER=less
 
+# Increase bash history
+HISTSIZE=5000
+
 # Set up path
 
 # Put ~/dotfiles/bin and ~/bin at the front of the path
