@@ -1,12 +1,9 @@
 #!/bin/bash
 
+repo_names_array=( ca_server common_utils encryptor_api files_api im_ios_sdk im_server ios_secure_assets keystore_api upload_server )
+
 if [ "$#" -ne 2 ]; then
-    echo "This script shallow clones all repos in your directory,"
-    echo "and zips them up for a deployment. It uses a temp directory"
-    echo "and will not affect your secure_share_workspace repos."
-    echo
-    echo "Usage: please run from your secure_share_workspace directory!"
-    echo "Usage: deploy_source {git branch to deploy} {output zip file}"
+    echo "Usage: deploy_source {git branch, tag, or SHA to deploy} {output zip file}"
     exit 1
 fi
 DEPLOY_BRANCH=$1
@@ -14,26 +11,23 @@ OUTPUT_FILE=$2
 TEMP_DIR=temp_$(date +%F%T)
 
 echo
-echo This command will create a zip file of latest shallowly cloned source across all repos.
-echo It uses a temp directory for cloning, and will not affect your secure_share_workspace repos.
+echo "This script shallow clones the following repos:"
+for repo_name in "${repo_names_array[@]}"
+do
+  echo -e https://git.asynchrony.com/proj-1016/${repo_name} " \t\t " revision: ${DEPLOY_BRANCH}
+done
 echo This may take some time...
 read -p "Press [Enter] key to continue"
 echo
-
-DIRS=`ls -l $MYDIR | egrep '^d' | awk '{print $9}'`
-# "ls -l $MYDIR"     = get a directory listing
-# "| egrep '^d'"     = pipe to egrep and select only the directories
-# "awk '{print $9}'" = pipe the result from egrep to awk and print only the 9th field
-# result will be all the repo names
 
 mkdir ${TEMP_DIR}
 cd ${TEMP_DIR}
 
 # and now loop through the repo names:
-for DIR in $DIRS
+for repo_name in "${repo_names_array[@]}"
 do
-  git clone https://git.asynchrony.com/proj-1016/${DIR} --depth 1 -b ${DEPLOY_BRANCH}
-  rm -f ${DIR}/.git/shallow
+  git clone https://git.asynchrony.com/proj-1016/${repo_name} --depth 1 -b ${DEPLOY_BRANCH}
+  rm -f ${repo_name}/.git/shallow
 done
 
 echo
@@ -46,6 +40,4 @@ cd ..
 rm -rf ${TEMP_DIR}
 echo Done!
 echo
-
-
 
