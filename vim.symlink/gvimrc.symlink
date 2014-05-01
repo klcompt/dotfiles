@@ -25,6 +25,7 @@ if has("gui_macvim")
   map <D-/> <plug>NERDCommenterToggle<CR>
   imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
 
+  let NERDTreeIgnore = ['\.sock$']
 
 " Command-][ to increase/decrease indentation
   vmap <D-]> >gv

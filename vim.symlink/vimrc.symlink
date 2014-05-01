@@ -46,6 +46,7 @@ set showcmd             " Letting me know I'm in 'leader' mode
 
 set wildmode=list:longest,full
 set wildmenu
+set wildignore=*.sock
 
 set virtualedit=block
 
