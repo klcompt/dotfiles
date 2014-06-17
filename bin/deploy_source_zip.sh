@@ -1,6 +1,6 @@
 #!/bin/bash
 
-repo_names_array=( ca_server common_utils encryptor_api files_api im_ios_sdk im_server ios_secure_assets keystore_api upload_server )
+repo_names_array=( ca_server common_utils encryptor_api files_api im_ios_sdk im_server ios_secure_assets keystore_api upload_server analytics_api )
 
 if [ "$#" -ne 2 ]; then
     echo "Usage: deploy_source {git branch, tag, or SHA to deploy} {output zip file}"
