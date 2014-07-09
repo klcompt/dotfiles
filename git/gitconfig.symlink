@@ -20,7 +20,6 @@
     br = branch
     bra = branch -a
     ci = commit -v
-    clear = !git add . && git stash && git stash drop
     co = checkout
     cp = cherry-pick
     di = diff
@@ -64,3 +63,10 @@
     path = .gitconfig.local
 [push]
   default = simple
+[user]
+[user]
+[user]
+[user]
+	name = Ed Wells and Kenny Ortmann
+	initials = ko ew
+	email = ionicmobile+edward.wells+kenny.ortmann@asynchrony.com
