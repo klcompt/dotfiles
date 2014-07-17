@@ -47,8 +47,6 @@
     staged = diff --staged
     stat = status
     sub = submodule update --init --recursive
-    svn-pull = !git svn fetch && git svn rebase
-    svn-push = !git svn dcommit
     uncommit = reset --soft HEAD^
     unmerge = reset --hard ORIG_HEAD
     unmerged = branch --no-merged
@@ -63,9 +61,6 @@
     path = .gitconfig.local
 [push]
   default = simple
-[user]
-[user]
-[user]
 [user]
 	name = Jason Gregory and Nick Bimpasis
 	initials = jg nb
