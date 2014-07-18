@@ -61,4 +61,4 @@ alias start_nginx="sudo launchctl start homebrew.mxcl.nginx"
 alias stop_nginx="sudo launchctl stop homebrew.mxcl.nginx"
 alias restart_nginx="stop_nginx && start_nginx"
 
-alias nuke_dbs="rm -f dbs/development.sqlite3 dbs/test.sqlite3; rake db:migrate; RACK_ENV=test rake db:migrate"
+alias nuke_dbs="RACK_ENV=test rake db:drop db:create db:migrate; rake db:drop db:create db:migrate"
