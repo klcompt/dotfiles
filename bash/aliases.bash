@@ -62,3 +62,6 @@ alias stop_nginx="sudo launchctl stop homebrew.mxcl.nginx"
 alias restart_nginx="stop_nginx && start_nginx"
 
 alias nuke_dbs="bundle exec rake db:drop db:create db:migrate; RACK_ENV=test bundle exec rake db:drop db:create db:migrate"
+
+alias register_ipad="(cd ~/secure_share_workspace/im_server/; rake registrations:finish_pending)"
+alias process_files="(cd ~/secure_share_workspace/file_processor/; rake processor:handle_file)"
