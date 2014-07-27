@@ -36,6 +36,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'wesgibbs/vim-irblack'
 Bundle 'elzr/vim-json'
+Bundle 'ervandew/supertab'
 
 Bundle 'kien/ctrlp.vim'
 
