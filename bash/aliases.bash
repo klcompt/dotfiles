@@ -64,5 +64,5 @@ alias restart_nginx="stop_nginx && start_nginx"
 alias nuke_dbs="bundle exec rake db:drop db:create db:migrate; RACK_ENV=test bundle exec rake db:drop db:create db:migrate"
 
 alias register_ipad="(cd ~/secure_share_workspace/im_server/; rake registrations:finish_pending)"
-alias process_files="(cd ~/secure_share_workspace/file_processor/; rake processor:handle_file processor:encrypt_key_per_user)"
+alias process_files="(cd ~/secure_share_workspace/file_processor/; rake processor:handle_video_file; rake processor:handle_file; rake processor:fetch_pending_encryption_keys; rake processor:encrypt_key_per_user)"
 alias add_local="(cd ~/secure_share_workspace/im_server; rake servers:add[local,https://`hostname`] services:reset)"
