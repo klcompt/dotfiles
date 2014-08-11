@@ -16,6 +16,7 @@ for repo_name in "${repo_names_array[@]}"
 do
   echo -e https://git.asynchrony.com/proj-1016/${repo_name} " \t\t " revision: ${DEPLOY_BRANCH}
 done
+echo -e https://gitlab.asynchrony.com/proj-1016/deadbolt " \t\t " revision: ${DEPLOY_BRANCH}
 echo This may take some time...
 read -p "Press [Enter] key to continue"
 echo
