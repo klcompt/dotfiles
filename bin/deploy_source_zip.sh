@@ -29,6 +29,9 @@ do
   git clone https://git.asynchrony.com/proj-1016/${repo_name} --depth 1 -b ${DEPLOY_BRANCH}
   rm -f ${repo_name}/.git/shallow
 done
+# this repo is in a different location, so cloning separately
+git clone https://gitlab.asynchrony.com/proj-1016/deadbolt.git --depth 1 -b ${DEPLOY_BRANCH}
+rm -f deadbolt/.git/shallow
 
 echo
 echo Source shallow cloned.  Zipping output...
