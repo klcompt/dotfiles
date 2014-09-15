@@ -63,8 +63,8 @@ if [[ -n "$PS1" ]]; then
     fi
 
     # Alias script to launch development environment for IM Server.
-    if [ -f ~/secure_share_workspace/common_utils/applescripts/launch_alias.bash ]; then
-        . ~/secure_share_workspace/common_utils/applescripts/launch_alias.bash
+    if [ -f ~/im_workspace/common_utils/applescripts/launch_alias.bash ]; then
+        . ~/im_workspace/common_utils/applescripts/launch_alias.bash
     fi
 
     # Set up keychain
