@@ -53,6 +53,8 @@ fi
 alias stop_elastic_search="launchctl unload -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
 alias start_elastic_search="launchctl load -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
 
+alias fix_nginx="sudo launchctl load -wF /Library/LaunchAgents/homebrew.mxcl.nginx.plist"
+
 for FILE in ~/dotfiles/*/aliases.sh; do
   source $FILE
 done
