@@ -1,6 +1,6 @@
 #!/bin/bash
 
-repo_names_array=( ca_server common_utils encryptor_api files_api im_ios_sdk im_server ios_secure_assets keystore_api upload_server analytics_api file_processor)
+repo_names_array=( ca_server encryptor_api files_api im_ios_sdk im_server ios_secure_assets keystore_api upload_server analytics_api file_processor deadbolt chef_knife )
 
 if [ "$#" -ne 2 ]; then
     echo "Usage: deploy_source {git branch, tag, or SHA to deploy} {output zip file}"
@@ -14,9 +14,8 @@ echo
 echo "This script shallow clones the following repos:"
 for repo_name in "${repo_names_array[@]}"
 do
-  echo -e https://git.asynchrony.com/proj-1016/${repo_name} " \t\t " revision: ${DEPLOY_BRANCH}
+  echo -e https://gitlab.asynchrony.com/proj-1016/${repo_name} " \t\t " revision: ${DEPLOY_BRANCH}
 done
-echo -e https://gitlab.asynchrony.com/proj-1016/deadbolt " \t\t " revision: ${DEPLOY_BRANCH}
 echo This may take some time...
 read -p "Press [Enter] key to continue"
 echo
@@ -27,12 +26,9 @@ cd ${TEMP_DIR}
 # and now loop through the repo names:
 for repo_name in "${repo_names_array[@]}"
 do
-  git clone https://git.asynchrony.com/proj-1016/${repo_name} --depth 1 -b ${DEPLOY_BRANCH}
+  git clone https://gitlab.asynchrony.com/proj-1016/${repo_name} --depth 1 -b ${DEPLOY_BRANCH}
   rm -f ${repo_name}/.git/shallow
 done
-# this repo is in a different location, so cloning separately
-git clone https://gitlab.asynchrony.com/proj-1016/deadbolt.git --depth 1 -b ${DEPLOY_BRANCH}
-rm -f deadbolt/.git/shallow
 
 echo
 echo Source shallow cloned.  Zipping output...

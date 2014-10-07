@@ -11,7 +11,7 @@
     whitespace = nowarn
 
 [credential]
-    helper = cache
+	helper = osxkeychain
 
 [alias]
     addall = !git add . && git add -u && git st
@@ -62,6 +62,6 @@
 [push]
   default = simple
 [user]
-	name = Jason Gregory and Nick Bimpasis
-	initials = jg nb
-	email = ionicmobile+jason.gregory+nick.bimpasis@asynchrony.com
+	name = Joe Hainline
+	initials = jh
+	email = joe.hainline@asynchrony.com
