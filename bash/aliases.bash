@@ -53,6 +53,8 @@ fi
 alias stop_elastic_search="launchctl unload -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
 alias start_elastic_search="launchctl load -wF ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
 
+alias fix_nginx="sudo launchctl load -wF /Library/LaunchAgents/homebrew.mxcl.nginx.plist"
+
 for FILE in ~/dotfiles/*/aliases.sh; do
   source $FILE
 done
@@ -63,6 +65,11 @@ alias restart_nginx="stop_nginx && start_nginx"
 
 alias nuke_dbs="bundle exec rake db:drop db:create db:migrate; RACK_ENV=test bundle exec rake db:drop db:create db:migrate"
 
-alias register_ipad="(cd ~/secure_share_workspace/im_server/; rake registrations:finish_pending)"
-alias process_files="(cd ~/secure_share_workspace/file_processor/; rake processor:handle_video_file; rake processor:handle_file; rake processor:fetch_pending_encryption_keys; rake processor:encrypt_key_per_user)"
-alias add_local="(cd ~/secure_share_workspace/im_server; rake servers:add[local,https://`hostname`] services:reset)"
+alias register_ipad="(cd ~/im_workspace/im_server/; rake registrations:finish_pending)"
+alias process_files="(cd ~/im_workspace/file_processor/; rake processor:handle_video_file; rake processor:handle_file; rake processor:fetch_pending_encryption_keys; rake processor:encrypt_key_per_user)"
+alias add_local="(cd ~/im_workspace/im_server; rake servers:add[local,https://`hostname`] services:reset)"
+
+
+function read_x509() {
+  openssl x509 -noout -text -in $1
+}
