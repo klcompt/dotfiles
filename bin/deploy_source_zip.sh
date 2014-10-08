@@ -14,7 +14,7 @@ echo
 echo "This script shallow clones the following repos:"
 for repo_name in "${repo_names_array[@]}"
 do
-  echo -e https://gitlab.asynchrony.com/proj-1016/${repo_name} " \t\t " revision: ${DEPLOY_BRANCH}
+  echo -e https://gitlab.asynchrony.com/proj-1016/${repo_name}.git " \t\t " revision: ${DEPLOY_BRANCH}
 done
 echo This may take some time...
 read -p "Press [Enter] key to continue"
@@ -26,7 +26,10 @@ cd ${TEMP_DIR}
 # and now loop through the repo names:
 for repo_name in "${repo_names_array[@]}"
 do
-  git clone https://gitlab.asynchrony.com/proj-1016/${repo_name} --depth 1 -b ${DEPLOY_BRANCH}
+  git clone https://gitlab.asynchrony.com/proj-1016/${repo_name}.git --depth 1 -b ${DEPLOY_BRANCH}
+  cd ${repo_name}
+  git submodule update --init --recursive
+  cd ..
   rm -f ${repo_name}/.git/shallow
 done
 
