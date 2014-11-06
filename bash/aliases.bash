@@ -35,6 +35,11 @@ alias rm='rm -i'
 alias cp='cp -v'
 alias mv='mv -v'
 
+# Working with archives
+alias ctar="tar -vzcf"
+alias utar="tar -xvzf"
+alias ltar="tar -vztf"
+
 # Fully update operating system
 if [ -f /etc/debian_version ]; then
   alias update_system="sudo bash -c 'apt-get -y update && apt-get -y upgrade && apt-get -y dist-upgrade && apt-get -y autoremove'"
