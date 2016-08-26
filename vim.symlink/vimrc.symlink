@@ -113,3 +113,8 @@ source $HOME/.vim/keymaps.vim
 source $HOME/.vim/commands.vim
 " File types
 source $HOME/.vim/filetypes.vim
+
+
+" KLC Change to try and get typescript-vim plugin working
+" (https://github.com/leafgarland/typescript-vim/issues/82)
+autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript

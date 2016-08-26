@@ -37,6 +37,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'wesgibbs/vim-irblack'
 Bundle 'elzr/vim-json'
 Bundle 'ervandew/supertab'
+Bundle 'leafgarland/typescript-vim'
 
 Bundle 'kien/ctrlp.vim'
 
